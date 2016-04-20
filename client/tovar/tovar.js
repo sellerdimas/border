@@ -11,18 +11,15 @@ Template.tovar.onRendered(function () {
    $('.sizeTovar').hide();
   $( '.modal1' ).hover(
         function() {
-            var imgSrc = $(this).attr('names');
+            var imgSrc = $(this).find('.mainImgTovar').attr('name');
             $(this).find('.sizeTovar').fadeIn(100);
-            console.log();
-            console.log(this);
 
-            var imgName = $(this).attr('name');
-            $( this ).attr('src', imgName);
+            $( this ).find('.mainImgTovar').attr('src', imgSrc);
         
         },function() {
               $(this).find('.sizeTovar').fadeOut(100);
-            var imgSrc = $(this).attr('names');
-            $( this ).attr('src', imgSrc);         
+            var imgSrc = $(this).find('.mainImgTovar').attr('names');
+            $( this ).find('.mainImgTovar').attr('src', imgSrc);         
         }
     );
   $('.tovarBlock').click(function (e) {
